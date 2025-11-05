@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Rethinking Economics: Revisiting the Conceptual Foundations of Classical Economics">
+  <meta name="keywords"
+    content="Reciprocity, Cognitive Agents, Multi-agent Simulation, Economic Exchange, Trust Modeling">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rethinking Economics: Revisiting the Conceptual Foundations of Classical Economics</title>
+
+
+  <!-- Open Graph for LinkedIn/Facebook -->
+  <meta property="og:title"
+    content="Rethinking Economics: Revisiting the Conceptual Foundations of Classical Economics">
+  <meta property="og:description"
+    content="Full paper, figures, and interactive framework reframing economics as animal social behavior structured by cognitive architecture — not barter or fixed equations.">
+  <meta property="og:image" content="https://egil158.github.io/cogfoundations-econ/static/images/econ.png">
+  <meta property="og:url" content="https://egil158.github.io/cogfoundations-econ/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+    content="Rethinking Economics: Revisiting the Conceptual Foundations of Classical Economics">
+  <meta name="twitter:description"
+    content="Full paper, figures, and interactive framework reframing economics as animal social behavior structured by cognitive architecture — not barter or fixed equations.">
+  <meta name="twitter:image" content="https://egil158.github.io/cogfoundations-econ/static/images/econ.png">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div> 
+    </div> -->
+
+  </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">Rethinking Economics: From Classical Assumptions to Cognitive
+              Reality</h1>
+
+            <!-- <h2 class="subtitle is-4 has-text-grey">
+              Position Paper
+            </h2> -->
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://egil158.github.io/" target="_blank" rel="noopener noreferrer">Egil Diau</a>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>National Taiwan University</span>
+              <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="./static/pdf/Rethinking_Economics.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2505.02945" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Zenodo</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+                <!-- Code Link. -->
+                <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+                <!-- Dataset Link. -->
+                <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+        <img src="./static/images/econ.png" alt="Project teaser"
+          style="width: 400px; height: 400px; object-fit: cover; border-radius: 24px; display: block; margin: 0 auto 2rem;">
+        <h2 class="subtitle has-text-centered">
+          <span style="font-weight: 900; font-size: 1.1em; letter-spacing: 0.5px;">TL/DR:</span>
+          &nbsp;Modern economics inherited its form from eighteenth-century moral philosophy.
+          Yet many of its core ideas—rational agency, self-interest, and equilibrium—were historical inventions, not
+          empirical facts.
+          To address this, we re-examine seven foundational myths and rebuild the field on cognitive and behavioural
+          reality.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered is-variable is-6">
+
+          <!-- Card 1: barter -->
+          <div class="column has-text-centered">
+            <img src="./static/images/barter.png" alt="barter"
+              style="width: 100%; max-width: 300px; border-radius: 12px; margin-bottom: 1rem;">
+            <p>
+              <strong>The Wrong Origin</strong><br>
+              The real origin of economic life was not barter between strangers but <em>reciprocity</em>.
+              It is a social behavior of group-living species, used to maintain relationships and coordination.
+            </p>
+          </div>
+
+          <!-- Card 2: selfishness -->
+          <div class="column has-text-centered">
+            <img src="./static/images/selfishness.png" alt="selfishness"
+              style="width: 100%; max-width: 300px; border-radius: 12px; margin-bottom: 1rem;">
+            <p>
+              <strong>The False Motivation</strong><br>
+              Economic behavior does not stem from self-interest but from social coordination.
+              Reciprocal mechanisms stabilize interaction, not private greed.
+            </p>
+          </div>
+
+          <!-- Card 3: rational_agent -->
+          <div class="column has-text-centered">
+            <img src="./static/images/rational_agent.png" alt="rational_agent"
+              style="width: 100%; max-width: 300px; border-radius: 12px; margin-bottom: 1rem;">
+            <p>
+              <strong>The False Assumption</strong><br>
+              The “rational agent” was never about rationality; it is a placeholder for missing mechanism.
+              Real economics is social behavior, not abstract optimization.
+            </p>
+          </div>
+
+
+
+          <!-- Card 4: equilibrium -->
+          <div class="column has-text-centered">
+            <img src="./static/images/equilibrium.png" alt="equilibrium"
+              style="width: 100%; max-width: 300px; border-radius: 12px; margin-bottom: 1rem;">
+            <p>
+              <strong>The Wrong Result</strong><br>
+              Economic behavior stems from animal roots—naturally variable and easily perturbed.
+              It forms a dynamic, not static, equilibrium—driven by feedback and power-law dynamics.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div class="columns is-centered has-text-centered" style="overflow: visible;">
+    <div class="column is-full" style="overflow: visible;">
+      <h2 class="title is-3" style="margin-bottom: 1.5rem;">Challenging the Foundations of Economics
+      </h2>
+      <div style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: visible;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+        ">
+        <img src="./static/images/econ_main.png" alt="Core Cognitive Diagram" style="
+              width: auto;
+              max-width: 40%;
+              height: auto;
+              border-radius: 0;
+              display: block;
+            ">
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h3 class="title is-3">Economics Was Never About Reality<br>
+            <span style="font-weight:400;">From Moral Philosophy to Behavior Mechanism</span>
+          </h3>
+          <div class="content has-text-justified">
+            <p>
+              Modern economics inherited its form from eighteenth-century moral philosophy.
+              Concepts like self-interest, equilibrium, and utility were not discovered—they were imagined,
+              then later formalized into mathematics without empirical grounding.
+            </p>
+            <p>
+              These abstractions gave the field elegance but not mechanism.
+              They describe how economists think markets <em>should</em> behave,
+              not how real humans or other social species actually coordinate and exchange.
+            </p>
+            <p>
+              This work revisits those foundations through evidence from anthropology, behavioral science, and cognitive
+              science—
+              reconstructing the origins of economic behavior as they actually emerge in real social life.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Since the eighteenth century, economics has drawn its view of human behaviour from moral philosophy rather
+              than empirical observation. Ideas that began as heuristics in the writings of Adam Smith—about
+              self-interest, exchange, and the harmony of markets—gradually hardened into the axioms of classical
+              theory.
+            </p>
+            <p>
+              Although anthropology, psychology, and behavioural research have since challenged these
+              assumptions, the discipline continues to build upon them as if they were empirical truths.
+            </p>
+            <p>
+              Here we
+              re-examine seven canonical claims that still frame economic thought: the myth of barter, the doctrine of
+              self-interest, the rational actor, the utility function, the aggregation of individuals, the equilibrium
+              ideal, and the invisible hand. For each, we trace its intellectual origin and contrast it with
+              contemporary evidence on how people actually coordinate and exchange.
+            </p>
+            <p>
+              Together, these cases reveal a
+              discipline built on historical invention rather than observation, and show how economics can be
+              re-anchored in real human behaviour.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- <div class="columns is-centered has-text-centered" style="margin-bottom: 2rem;"></div> -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">The Cognitive Foundations of Reciprocity</h2>
+          <div class="content">
+            <img src="./static/images/three_cog.jpg" alt="Project teaser"
+              style="width:90%; max-width:720px; border-radius: 8px;">
+          </div>
+        </div>
+      </div> -->
+      <!-- </div>   -->
+
+      <!-- <div class="columns is-centered has-text-centered" style="margin-bottom: 2rem;"></div> -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Reciprocity Exchange Simulation Framework</h2>
+          <div class="publication-video" style="overflow: visible; margin-bottom: 2rem;">
+            <img src="./static/images/framework.jpeg" alt="Project teaser"
+              style="width:100%; max-width:720px; border-radius: 8px;">
+          </div>
+        </div>
+      </div> -->
+      <!-- </div>   -->
+      <!--/ Paper video. -->
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Why It Matters?</h2>
+          <div class="content has-text-justified">
+            <p>
+              For centuries, economics has explained markets through elegant mathematics built on imagined
+              assumptions—rational agents,
+              equilibrium, and utility—none of which were ever grounded in real behavior.
+            </p>
+            <p>
+              This mathematical elegance gave the discipline authority but detached it from observation.
+              Theories describe how markets <em>should</em> behave, not how people actually act, cooperate, or create
+              value in daily life.
+            </p>
+            <p>
+              Reconnecting economics with evidence from anthropology, behavioral science, and cognitive science
+              allows us to recover what was lost: a description of exchange that begins with social reality, not
+              abstraction.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Implementation Outlook</h2>
+          <div class="content has-text-justified">
+            <p>
+              This framework is designed to be simulateable from the ground up. Each of the three cognitive
+              primitives—recognition, credence, and cost–return sensitivity—can be implemented as modular memory
+              functions in LLM-based agents.
+            </p>
+            <p>
+              Rather than relying on reinforcement learning or hardcoded rules, agents can be equipped with identity
+              tracking, scalar expectations, and cumulative cost-return logs to support adaptive reciprocity over time.
+            </p>
+            <p>
+              These components can be layered into existing multi-agent systems via structured memory and prompt-level
+              reasoning—enabling scalable simulations of how social exchange and institutions emerge from simple
+              cognitive building blocks.
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Cite This Work</h2>
+
+          <div class="box cite-box has-text-left">
+            <button class="button is-primary is-light is-rounded is-small cite-copy" data-target="cite-zenodo">
+              📋 Copy
+            </button>
+
+            <pre id="cite-zenodo"><code>@misc{diau_2025_17502418,
+  author       = {Diau, Egil},
+  title        = {Rethinking Economics: From Classical Assumptions
+                   to Cognitive Reality
+                  },
+  month        = nov,
+  year         = 2025,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.17502418},
+  url          = {https://doi.org/10.5281/zenodo.17502418},
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        :root {
+          --cite-bg: #f7f7f9;
+          --cite-border: #e6e6ea;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --cite-bg: #1f1f24;
+            --cite-border: #32323a;
+          }
+        }
+
+        .cite-box {
+          position: relative;
+          background: var(--cite-bg);
+          border: 1px solid var(--cite-border);
+          border-radius: 12px;
+          padding: 1.25rem 1.25rem 1rem;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+          text-align: left;
+        }
+
+        .cite-box .cite-copy {
+          position: absolute;
+          top: .75rem;
+          right: .75rem;
+        }
+
+        .cite-box pre {
+          margin: 0;
+          padding: .5rem 0 0 0;
+          white-space: pre;
+          overflow-x: auto;
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+          font-size: 0.95rem;
+          line-height: 1.55;
+        }
+
+        .cite-box pre code {
+          background: transparent !important;
+        }
+      </style>
+
+      <script>
+        function copyBib(btn) {
+          const id = btn.getAttribute('data-target');
+          const el = document.getElementById(id);
+          const text = el ? el.innerText.trim() : '';
+          if (!text) return;
+
+          navigator.clipboard.writeText(text).then(() => {
+            const old = btn.innerHTML;
+            btn.innerHTML = "✅ Copied!";
+            btn.classList.remove("is-primary", "is-light");
+            btn.classList.add("is-success");
+            setTimeout(() => {
+              btn.innerHTML = old;
+              btn.classList.remove("is-success");
+              btn.classList.add("is-primary", "is-light");
+            }, 1500);
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.cite-copy').forEach(btn => {
+            btn.addEventListener('click', () => copyBib(btn));
+          });
+        });
+      </script>
+
+      <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Demo</h2>
+        <div class="publication-video">
+          <img src="./static/images/underconstruction.png" alt="Project teaser" style="width:100%; max-width:400px; border-radius: 8px;">
+        </div>
+      </div>
+    </div> -->
+
+    </div>
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered" style="font-size: 0.9rem; line-height: 1.6; margin-top: 1rem;">
+            <p>
+              Adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>. Licensed
+              under
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
